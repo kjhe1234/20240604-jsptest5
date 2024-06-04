@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,10 +8,16 @@
 <title>forward 연습</title>
 </head>
 <body>
+	<%
+		Date date = new Date();
+
+	%>
 	<h3>저는 forward.jsp 입니다!!</h3>
 	<jsp:forward page="forwardOk.jsp">
 		<jsp:param value="tiger" name="memberId"/>
 		<jsp:param value="12345" name="memberPw"/>
+		<jsp:param value="<%= date.toLocaleString() %>" name="date"/>
+		
 	
 	
 	</jsp:forward>
